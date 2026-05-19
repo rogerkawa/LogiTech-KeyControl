@@ -78,8 +78,11 @@ form label:not(.turn label){
     width: 20vw;
     margin: 40px auto;
 }
+.btn-outline-primary{
+    margin-top: 15px;
+}
 #admin{
-    padding: 20px;
+    padding: 45px 20px;
     height: 100vh;
     margin: 0 auto;
     width: 45vw;
@@ -141,22 +144,15 @@ form label:not(.turn label){
 .modal__conteudo{
     width: 320px;
     min-height: 220px;
-
     background: #fff;
-
     border-radius: 16px;
-
     padding: 25px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
     gap: 15px;
-
     box-shadow:
         0 10px 25px rgba(0,0,0,0.2);
 
@@ -178,16 +174,11 @@ form label:not(.turn label){
 
 .closeModal{
     border: none;
-
     background: #111827;
     color: white;
-
     padding: 10px 18px;
-
     border-radius: 10px;
-
     cursor: pointer;
-
     transition: 0.3s;
 }
 
@@ -223,18 +214,12 @@ form label:not(.turn label){
 /* Alert Toast */
 .alerta-fixo{
     position: fixed;
-
     top: 20px;
     right: 20px;
-
     z-index: 9999;
-
     min-width: 320px;
-
     border: none;
-
     border-radius: 12px;
-
     box-shadow:
         0 10px 25px rgba(0,0,0,0.15);
 
@@ -271,12 +256,13 @@ form label:not(.turn label){
     }
 }
 
-
-@media (max-width: 768px){
+@media (max-width: 1024px){
     body{
         grid-template-columns: 1fr;
         gap: 20px;
     }
+}
+@media (max-width: 768px){
     header{
         border-top-left-radius: 0;
         border-top-right-radius: 0;
