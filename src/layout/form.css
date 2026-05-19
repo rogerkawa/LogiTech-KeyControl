@@ -144,15 +144,22 @@ form label:not(.turn label){
 .modal__conteudo{
     width: 320px;
     min-height: 220px;
+
     background: #fff;
+
     border-radius: 16px;
+
     padding: 25px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     text-align: center;
+
     gap: 15px;
+
     box-shadow:
         0 10px 25px rgba(0,0,0,0.2);
 
@@ -255,14 +262,16 @@ form label:not(.turn label){
         height: auto;
     }
 }
-
 @media (max-width: 1024px){
     body{
         grid-template-columns: 1fr;
         gap: 20px;
     }
 }
+
+
 @media (max-width: 768px){
+    
     header{
         border-top-left-radius: 0;
         border-top-right-radius: 0;
