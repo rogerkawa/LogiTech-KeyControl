@@ -1,0 +1,22 @@
+header{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    background: var(--cor1);
+    color: var(--cor3);
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.bi-key{
+    margin-left: 20px;
+    background: #ffffff2c;
+    font-size: 2.5rem;
+    padding: 0.9rem;
+    border-radius: 50px;
+}
+.txtHeader h1{
+    font-weight: 600;
+    font-size: 2.2rem;
+}

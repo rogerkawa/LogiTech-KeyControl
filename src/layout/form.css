@@ -1,0 +1,372 @@
+#forms{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 45vw;
+    box-shadow: 1px 1px 5px;
+    border-radius: 15px;
+    height: 90vh;
+    z-index: 1;
+}
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 30px;
+}
+.txtMain h1{
+    margin-top: 15px;
+    font-size: 1.8rem;
+    color: var(--cor1);
+}
+.bi-box-arrow-in-right{
+    color: var(--cor1);
+    font-size: 2rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+form label:not(.turn label){
+    font-weight: bold;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+.turn{
+    display: flex;
+    flex-direction: column;
+}
+.turn > span{
+    font-weight: bold;
+}
+.form-check-input{
+    width: 50vw;
+}
+.radios{
+    display: flex;
+    gap: 20px;
+}
+.form-check-label{
+    font-size: 1.2rem;
+}
+.horarios > span{
+    font-weight: bold;
+}
+.hoursContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.hours{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: gray;
+}
+.hours input{
+    width: 100%;
+    height: 4vh;
+}
+
+.btn-primary{
+    width: 20vw;
+    margin: 40px auto;
+}
+#admin{
+    padding: 20px;
+    height: 100vh;
+    margin: 0 auto;
+    width: 45vw;
+}
+.admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px gray;
+    text-align: center;
+}
+.admin h1{
+    font-size: 2.5rem;
+}
+.numero{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+.atividade-box{
+    margin-top: 30px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.atividade-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+.atividade-nome{
+    font-weight: 600;
+}
+
+.atividade-info{
+    color: #64748b;
+    font-size: 14px;
+}
+#forms footer{
+    margin-top: 15px;
+}
+
+/* Modal */
+.modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+        top: 0;
+    display: none;
+}
+.modal__conteudo{
+    width: 320px;
+    min-height: 220px;
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.2);
+
+    animation: modalUp 0.3s ease;
+}
+
+
+.modal__conteudo h2{
+    font-size: 1.5rem;
+    color: #222;
+}
+
+
+.modal__conteudo p{
+    color: #555;
+    line-height: 1.5;
+}
+
+
+.closeModal{
+    border: none;
+
+    background: #111827;
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.closeModal:hover{
+    transform: scale(1.05);
+    background: #1f2937;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes modalUp{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Alert Toast */
+.alerta-fixo{
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 9999;
+
+    min-width: 320px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.15);
+
+    animation: surgir .3s ease;
+}
+
+@keyframes surgir{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1200px){
+
+    main{
+        flex-direction: column;
+        align-items: center;
+    }
+    #forms,
+    #admin{
+        width: 90%;
+    }
+    #forms{
+        height: auto;
+    }
+    #admin{
+        height: auto;
+    }
+}
+
+
+@media (max-width: 768px){
+    body{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    header{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    main{
+        padding: 20px;
+    }
+    #forms,
+    #admin{
+        width: 100%;
+    }
+    .formulario{
+        padding: 20px;
+    }
+    .txtMain h1{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .hoursContainer{
+        grid-template-columns: 1fr;
+    }
+    .btn-primary{
+        width: 100%;
+    }
+    .radios{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .admin h1{
+        font-size: 2rem;
+        text-align: center;
+    }
+    canvas{
+        width: 100% !important; /* serve para dar prioridade máxima para uma regra. */
+        height: auto !important;
+    }
+}
+
+
+@media (max-width: 480px){
+
+    header{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .bi-key{
+        margin-left: 0;
+    }
+
+    .txtHeader h1{
+        font-size: 1.7rem;
+    }
+
+    .txtHeader p{
+        font-size: 0.9rem;
+    }
+
+    .txtMain h1{
+        font-size: 1.3rem;
+    }
+
+    .form-check-label{
+        font-size: 1rem;
+    }
+
+    .atividade-box{
+        padding: 15px;
+    }
+
+    .atividade-item{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .numero{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    #totalSetor{
+        text-align: center;
+    }
+
+    .modal__conteudo{
+        width: 90%;
+    }
+}
