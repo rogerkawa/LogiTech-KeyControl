@@ -89,45 +89,32 @@ botoesEditar.forEach((botao)=>{
 
     botao.addEventListener('click', ()=>{
 
-        const id =
-        botao.dataset.id
+        const id = botao.dataset.id
         idAtual = id
 
-        const registro =
-        chaves[id]
+        const registro = chaves[id]
 
-        editarNome.value =
-        registro.pessoa
+        editarNome.value = registro.pessoa
 
-        editarSala.value =
-        registro.sala
+        editarSala.value = registro.sala
 
-        editarEntrega.value =
-        registro.entrega || ''
+        editarEntrega.value = registro.entrega || ''
 
         modalEditar.classList.remove('escondido')
 
     })
 
 })
+
 const salvarEdicao =
 document.getElementById('salvarEdicao')
 
 salvarEdicao.addEventListener('click', ()=>{
-
-    chaves[idAtual].pessoa =
-    editarNome.value
-
-    chaves[idAtual].sala =
-    editarSala.value
-
-    chaves[idAtual].entrega =
-    editarEntrega.value
-
-    localStorage.setItem(
-        'chaves',
-        JSON.stringify(chaves)
-    )
+    chaves[idAtual].pessoa = editarNome.value
+    chaves[idAtual].sala = editarSala.value
+    chaves[idAtual].entrega = editarEntrega.value
+    
+    localStorage.setItem('chaves', JSON.stringify(chaves))
 
     modalEditar.classList.add('escondido')
 
@@ -135,23 +122,20 @@ salvarEdicao.addEventListener('click', ()=>{
 
 })
 
-const fecharEditar =
-document.getElementById('fecharEditar')
 
-const cancelarEditar =
-document.getElementById('cancelarEditar')
+/* Fechar modal Editar */
+const fecharEditar = document.getElementById('fecharEditar')
+const cancelarEditar = document.getElementById('cancelarEditar')
 
 fecharEditar.addEventListener('click', ()=>{
-
     modalEditar.classList.add('escondido')
-
 })
 
 cancelarEditar.addEventListener('click', ()=>{
-
     modalEditar.classList.add('escondido')
-
 })
+
+/* DarkMode */
 
 const toggleTema = document.getElementById('toggleTema')
 

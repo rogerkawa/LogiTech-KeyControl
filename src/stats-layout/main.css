@@ -185,6 +185,11 @@ thead tr{
     background: #1d4ed8;
 }
 
+.form-select{
+    background: var(--bg);
+    color: var(--text);
+}
+
 @keyframes aparecerEditar{
     from{
         opacity: 0;

@@ -100,7 +100,7 @@ export default function acesso() {
 
     const senha = document.getElementById('senhaAdm').value
 
-    if(senha === 'senai123'){
+    if(senha === senhaVerif){
         modalSenha.classList.add('escondido')
         window.location.href = "stats.html";
     }else{
@@ -166,6 +166,8 @@ export default function acesso() {
 
   const dados = contarSetores();
 
+  const corTexto = document.documentElement.classList.contains('dark') ? '#f8fafc' : '#111827'
+
   const grafico = new Chart(ctx, {
     type: "doughnut",
     data: {
@@ -187,13 +189,14 @@ export default function acesso() {
       plugins: {
         legend: {
           position: "top",
+          labels:{
+          color: corTexto
+        }
         },
       },
     },
   });
-  const corTexto = document.body.classList.contains('dark')
-    ? '#f8fafc'
-    : '#111827'
+  
 
   //mostrar retiradas
   const atividade = document.querySelector("#atividade");
@@ -232,7 +235,7 @@ export default function acesso() {
 
     document.documentElement.classList.toggle('dark')
 
-    if(document.documentElement.classList.contains('dark')){
+    if(document.documentElement.classList.contains('dark')){ // verifica se possui essa classe
         localStorage.setItem('tema', 'dark') //não muda o tema quando recarrega a pagina
     }else{
         localStorage.setItem('tema', 'light')
