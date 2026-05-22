@@ -4,12 +4,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body{
     font-family: var(--font-principal);
-    background: var(--cor3);
+    background: var(--bg);
+    color: var(--text);
     height: 100vh;
+    transition: .3s;
 }
 
 img{
@@ -21,4 +24,16 @@ img{
     --cor1: #1554D1;
     --cor2: #0D47B8;
     --cor3: #fff;
+    --bg: #f8fafc;
+    --text: #111827;
+    --card: #ffffff;
+    --border: #000;
+    --table: #ffffff;
+}
+.dark{
+    --bg: #0f172a;
+    --text: #f8fafc;
+    --card: #1e293b;
+    --border: #334155;
+    --table: #111827;
 }

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LogiTech</title>
+  <title>KControl</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="src/style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,9 +23,10 @@
     <header>
       <i class="bi-key"></i>
       <div class="txtHeader">
-        <h1>LogiTech</h1>
+        <h1>KControl</h1>
         <span>Sistema de Controle e Agendamento de Chaves</span>
       </div>
+      
     </header>
 
     <main>
@@ -104,14 +105,8 @@
 
         <button type="button" class="btn btn-outline-primary">Verificar Registros</button>
 
-        <!-- Modal -->
-        <div class="modal">
-          <div class="modal__conteudo">
-            <h1>Dados Incorretos</h1>
-            <span>Por favor preencha todos os dados corretamentes!</span>
-            <button class="closeModal"><i class="bi bi-x"></i></button>
-          </div>
-        </div>
+
+
 
         <!-- Toast Bem Vindo -->
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -153,6 +148,53 @@
     </div>
 
   </section>
+
+  <!-- Modal erro -->
+  <div class="modalErro">
+    <div class="modal__conteudo">
+      <h1>Dados Incorretos</h1>
+      <span>Por favor preencha todos os dados corretamentes!</span>
+      <button class="closeModal"><i class="bi bi-x"></i></button>
+    </div>
+  </div>
+
+  <!-- Modal senha -->
+  <div id="modalSenha" class="modalSenha escondido">
+    <div class="conteudo-modal">
+      <div class="topo-modal">
+        <div class="icone-admin">
+          <i class="bi bi-shield-lock-fill"></i>
+        </div>
+
+        <button id="fecharModalSenha">
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+      </div>
+
+      <h2>Área Administrativa</h2>
+
+      <p>
+        Digite a senha para acessar os registros do sistema.
+      </p>
+
+      <input type="password" id="senhaAdm" placeholder="Digite a senha">
+
+      <div class="acoes-modal">
+        <button id="sairModal">
+          Sair
+        </button>
+
+        <button id="entrarAdm">
+          Entrar
+        </button>
+      </div>
+    </div>
+  </div>
+  <button id="toggleTema" class="btn btn-dark">
+        <i class="bi bi-moon-stars-fill"></i>
+    </button>
+
 </body>
 
 </html>

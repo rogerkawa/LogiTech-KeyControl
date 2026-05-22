@@ -7,8 +7,10 @@ export default function acesso() {
   const hrsEntrega = document.querySelector("#horasEntrega");
   const buttonRegistro = document.querySelector("#liveToastBtn");
   const form = document.querySelector(".was-validated");
-  const modal = document.querySelector(".modal");
+  const modal = document.querySelector(".modalErro");
   const closeModal = document.querySelector(".closeModal");
+  const modalSenha = document.getElementById('modalSenha');
+  const entrarAdm = document.getElementById('entrarAdm');
 
   // pega registros já existentes ou um array vazio
   let chaves = JSON.parse(localStorage.getItem("chaves")) || [];
@@ -32,6 +34,8 @@ export default function acesso() {
         turno: turno.value,
         pessoa: responsavel.value,
         retirada: hrsRetirada.value,
+        entrega: '',
+        data: new Date().toLocaleDateString('pt-BR'),
       };
 
       const existeRegistro = chaves.some((item) => // Verifica se pelomenos um elemento do array atende a condição
@@ -78,10 +82,6 @@ export default function acesso() {
   /* Botão de Verificar registros */
   const verif = document.querySelector(".btn-outline-primary")
 
-    /* const promptSenha = prompt('Digite a senha para verificar os registros')
-    if(promptSenha === senhaVerif){
-      window.location.href = "stats.html";
-    } */
 
   verif.addEventListener("click", () => {
     if (chaves.length == 0) {
@@ -91,11 +91,44 @@ export default function acesso() {
         text: "Registros Vazios",
       });
     } else {
-      window.location.href = "stats.html";
+      modalSenha.classList.remove('escondido') 
+      /* window.location.href = "stats.html"; */
     }
   });
 
-  /* fechar modal */
+    entrarAdm.addEventListener('click', ()=>{
+
+    const senha = document.getElementById('senhaAdm').value
+
+    if(senha === 'senai123'){
+        modalSenha.classList.add('escondido')
+        window.location.href = "stats.html";
+    }else{
+        Swal.fire({
+        icon: "error",
+        title: "Senha Incorreta",
+        text: "Por Favor digite a senha válida!",
+        customClass: {
+        popup: 'swal-acima'
+    }
+      });
+    }
+
+})
+
+/* Fechar modal senha */
+      const sairModal = document.getElementById('sairModal')
+      const fecharModalSenha = document.getElementById('fecharModalSenha')
+
+      sairModal.addEventListener('click', ()=>{
+          modalSenha.classList.add('escondido')
+      })
+
+      fecharModalSenha.addEventListener('click', ()=>{
+          modalSenha.classList.add('escondido')
+})
+
+  /* fechar modal erro*/
   closeModal.addEventListener("click", () => {
     modal.style.display = "none";
   });
@@ -158,6 +191,9 @@ export default function acesso() {
       },
     },
   });
+  const corTexto = document.body.classList.contains('dark')
+    ? '#f8fafc'
+    : '#111827'
 
   //mostrar retiradas
   const atividade = document.querySelector("#atividade");
@@ -188,6 +224,25 @@ export default function acesso() {
         `;
     });
   }
+
+  /* dark mode */
+  const toggleTema = document.getElementById('toggleTema')
+
+  toggleTema.addEventListener('click', ()=>{
+
+    document.documentElement.classList.toggle('dark')
+
+    if(document.documentElement.classList.contains('dark')){
+        localStorage.setItem('tema', 'dark') //não muda o tema quando recarrega a pagina
+    }else{
+        localStorage.setItem('tema', 'light')
+    }
+
+})
+
+if(localStorage.getItem('tema') === 'dark'){
+    document.documentElement.classList.add('dark')
+}
 
   renderizarAtividades();
 }

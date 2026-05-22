@@ -3,7 +3,7 @@ header{
     display: flex;
     gap: 30px;
     padding: 20px;
-    background: var(--cor1);
+    background: var(--header);
     color: var(--cor3);
     align-items: center;
     border-top-left-radius: 15px;
