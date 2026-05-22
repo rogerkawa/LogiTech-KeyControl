@@ -11,7 +11,9 @@ body{
     font-family: var(--font-principal);
     background: var(--bg);
     color: var(--text);
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     transition: .3s;
 }
 
@@ -29,6 +31,7 @@ img{
     --card: #ffffff;
     --border: #000;
     --table: #ffffff;
+    --span: #898989;
 }
 .dark{
     --bg: #0f172a;
@@ -36,4 +39,5 @@ img{
     --card: #1e293b;
     --border: #334155;
     --table: #111827;
+    --span: #898989;
 }

@@ -154,5 +154,21 @@ toggleTema.addEventListener('click', ()=>{
 if(localStorage.getItem('tema') === 'dark'){
     document.body.classList.add('dark')
 }
+
+/* Limpeza automatica */
+const horaLimpeza = 23 // 23h
+const agora = new Date()
+const horaAtual = agora.getHours()
+const hoje = agora.toLocaleDateString()
+
+const ultimaLimpeza = localStorage.getItem('ultimaLimpeza')
+
+if(horaAtual >= horaLimpeza && ultimaLimpeza !== hoje){
+
+    localStorage.removeItem('chaves')
+
+    localStorage.setItem('ultimaLimpeza', hoje)
+
+}
  
 }

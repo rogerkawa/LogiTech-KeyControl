@@ -2,6 +2,7 @@ main{
     width: 80vw;
     margin: 50px auto;
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -188,6 +189,23 @@ thead tr{
 .form-select{
     background: var(--bg);
     color: var(--text);
+}
+.aviso{
+    margin-top: 15px;
+    color: var(--span);
+}
+
+footer{
+    color: var(--text);
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #3b82f6;
+    transition: 0.5s;
+}
+a:hover{
+    text-decoration: underline;
 }
 
 @keyframes aparecerEditar{
