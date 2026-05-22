@@ -25,7 +25,7 @@
     --input: #111827;
     --header: #1e293b;
 }
-html{
+html, body{
     background: var(--bg);
 }
 
