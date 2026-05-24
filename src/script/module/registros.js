@@ -156,19 +156,37 @@ if(localStorage.getItem('tema') === 'dark'){
 }
 
 /* Limpeza automatica */
-const horaLimpeza = 23 // 23h
-const agora = new Date()
-const horaAtual = agora.getHours()
-const hoje = agora.toLocaleDateString()
 
-const ultimaLimpeza = localStorage.getItem('ultimaLimpeza')
+function limpezaAutomatica(){
+    console.log('inicio')
+    const horaLimpeza = 23 // 23h
+    const agora = new Date()
+    const horaAtual = agora.getHours()
+    const hoje = agora.toLocaleDateString()
 
-if(horaAtual >= horaLimpeza && ultimaLimpeza !== hoje){
-
-    localStorage.removeItem('chaves')
-
-    localStorage.setItem('ultimaLimpeza', hoje)
+    console.log(horaAtual)
+    console.log(hoje)
+    
+    const ultimaLimpeza = localStorage.getItem('ultimaLimpeza')
+    console.log(ultimaLimpeza)
+    
+    if(horaAtual >= horaLimpeza && ultimaLimpeza !== hoje){
+    
+        localStorage.removeItem('chaves')
+        tableRow.innerHTML = ''
+        chaves = [] 
+        renderizarTabela()
+        localStorage.setItem('ultimaLimpeza', hoje)
+        console.log('dados apagados')
+    
+    }
+    console.log('ate aqui foi')
 
 }
+setInterval(()=> {
+    limpezaAutomatica()
+},60000)
+
+limpezaAutomatica()
  
 }
